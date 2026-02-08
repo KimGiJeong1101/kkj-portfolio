@@ -1,72 +1,114 @@
-// src/components/ToyProject.tsx
-interface TOY_DATA_TYPE {
-  TITLE: string;
-  TECH: string[];
-  DESC: string;
-  LINK: string;
-}
-
-const TOY_DATA: TOY_DATA_TYPE[] = [
-  {
-    TITLE: "Personal Blog",
-    TECH: ["React", "Vite", "Tailwind"],
-    DESC: "마크다운 기반의 정적 블로그를 제작하여 학습 내용을 기록하고 있습니다.",
-    LINK: "https://github.com/your-repo/blog",
-  },
-  {
-    TITLE: "Weather Dashboard",
-    TECH: ["TypeScript", "OpenWeatherAPI"],
-    DESC: "사용자의 위치 정보를 활용해 실시간 날씨 정보를 제공하는 대시보드입니다.",
-    LINK: "https://github.com/your-repo/weather",
-  },
-];
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaYoutube,
+  FaPlayCircle,
+} from "react-icons/fa";
+import { TOY_PROJECTS } from "../constants/projects";
 
 const ToyProject = () => {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      {TOY_DATA.map((project, index) => (
-        <div
-          key={index}
-          className="group bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+    <div className="grid gap-8 md:grid-cols-2">
+      {TOY_PROJECTS.map((project, index) => (
+        <motion.div
+          key={project.TITLE}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.1 }}
+          className="group bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 flex flex-col justify-between"
         >
-          <div className="flex justify-between items-start mb-4">
-            <h4 className="font-bold text-xl text-slate-800">
-              {project.TITLE}
-            </h4>
-            <a
-              href={project.LINK}
-              target="_blank"
-              className="text-slate-400 hover:text-indigo-600 transition"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </a>
+          <div>
+            {/* 상단: 제목 및 링크 섹션 */}
+            <div className="flex justify-between items-start mb-4">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="font-black text-xl text-slate-800 tracking-tight">
+                    {project.TITLE}
+                  </h4>
+                  <span className="text-[10px] text-slate-400 font-medium">
+                    {project.DATE}
+                  </span>
+                </div>
+                <p className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider">
+                  {project.SUBTITLE}
+                </p>
+              </div>
+
+              <div className="flex gap-3 pt-1">
+                {project.GIT_URL && (
+                  <a
+                    href={project.GIT_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-400 hover:text-indigo-600 transition-colors"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+                )}
+                {project.PAGE_URL && (
+                  <a
+                    href={project.PAGE_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-400 hover:text-indigo-600 transition-colors"
+                  >
+                    <FaExternalLinkAlt size={18} />
+                  </a>
+                )}
+                {project.VIDEO_URL && (
+                  <a
+                    href={project.VIDEO_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-slate-400 hover:text-red-500 transition-colors"
+                  >
+                    {project.VIDEO_URL.includes("youtube") ? (
+                      <FaYoutube size={20} />
+                    ) : (
+                      <FaPlayCircle size={20} />
+                    )}
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* 중단: 설명 및 상세 리스트 */}
+            <p className="text-slate-600 mb-6 text-sm leading-relaxed font-medium">
+              {project.DESCRIPTION}
+            </p>
+
+            {/* DETAILS 데이터 출력 부분 */}
+            {project.DETAILS && project.DETAILS.length > 0 && (
+              <ul className="mb-8 space-y-2">
+                {project.DETAILS.map((detail, idx) => (
+                  <li
+                    key={idx}
+                    className="text-[12px] text-slate-500 flex items-start gap-2"
+                  >
+                    <span className="text-indigo-400 mt-1 flex-shrink-0">
+                      ·
+                    </span>
+                    <span className="leading-relaxed">{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-          <p className="text-slate-600 mb-6 text-sm leading-relaxed">
-            {project.DESC}
-          </p>
+
+          {/* 하단: 기술 스택 배지 */}
           <div className="flex flex-wrap gap-2">
             {project.TECH.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 bg-slate-50 text-slate-500 text-xs rounded-md border border-slate-100 uppercase font-medium"
+                className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] rounded-lg font-bold uppercase tracking-wider border border-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-500 group-hover:border-indigo-100 transition-colors"
               >
                 {tech}
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

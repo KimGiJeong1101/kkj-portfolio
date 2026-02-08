@@ -2,13 +2,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ToyProject from "./ToyProject";
 import TeamProject from "./TeamProject";
+// 데이터 임포트
+import { TEAM_PROJECTS, TOY_PROJECTS } from "../constants/projects";
 
 const ProjectFrame = () => {
   const [activeTab, setActiveTab] = useState<"toy" | "team">("toy");
 
+  // .length를 사용하여 자동으로 갯수를 가져옵니다.
   const TABS = [
-    { ID: "toy", LABEL: "TOY PROJECTS", COUNT: 3 },
-    { ID: "team", LABEL: "TEAM PROJECTS", COUNT: 2 },
+    { ID: "toy", LABEL: "TOY PROJECTS", COUNT: TOY_PROJECTS.length },
+    { ID: "team", LABEL: "TEAM PROJECTS", COUNT: TEAM_PROJECTS.length },
   ];
 
   return (
@@ -19,7 +22,6 @@ const ProjectFrame = () => {
             PROJECTS
           </h2>
 
-          {/* 세련된 탭 스위치 */}
           <div className="relative flex bg-slate-100 p-1 rounded-2xl border border-slate-200">
             {TABS.map((tab) => (
               <button
@@ -42,7 +44,6 @@ const ProjectFrame = () => {
                   {tab.COUNT}
                 </span>
 
-                {/* 활성화된 탭 뒤의 흰색 배경 슬라이딩 효과 */}
                 {activeTab === tab.ID && (
                   <motion.div
                     layoutId="activeTab"
@@ -55,7 +56,6 @@ const ProjectFrame = () => {
           </div>
         </div>
 
-        {/* 프로젝트 리스트 전환 애니메이션 */}
         <div className="relative min-h-[400px]">
           <AnimatePresence mode="wait">
             <motion.div
@@ -65,6 +65,7 @@ const ProjectFrame = () => {
               exit={{ opacity: 0, x: activeTab === "toy" ? 20 : -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
+              {/* 각 컴포넌트에 데이터를 직접 전달하거나, 해당 컴포넌트 내부에서 데이터를 임포트해서 쓰면 됩니다. */}
               {activeTab === "toy" ? <ToyProject /> : <TeamProject />}
             </motion.div>
           </AnimatePresence>
