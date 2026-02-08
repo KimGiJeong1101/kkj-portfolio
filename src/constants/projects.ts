@@ -4,8 +4,7 @@ export interface ProjectData {
   TITLE: string;
   SUBTITLE: string;
   DATE: string;
-  ROLE: string;
-  CONTRIBUTION: string;
+  TEAMSIZE?: string;
   DESCRIPTION: string;
   DETAILS: string[];
   TECH: string[];
@@ -19,10 +18,9 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "Clubing",
     SUBTITLE: "MERN 스택 활용 소모임 레퍼런스 웹사이트",
-    imgSrc: "",
+    imgSrc: "/Clubing Thumb.png",
     DATE: "2024.08 ~ 2024.09",
-    ROLE: "Full-Stack Developer (팀장)",
-    CONTRIBUTION: "70%",
+    TEAMSIZE: "6명",
     DESCRIPTION:
       "취미 모임 앱을 벤치마킹하여 실시간 소통과 안전한 사용자 인증에 중점을 둔 커뮤니티 서비스입니다.",
     DETAILS: [
@@ -47,10 +45,9 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "BelleAnge",
     SUBTITLE: "Spring Boot & React 기반 반응형 쇼핑몰",
-    imgSrc: "/projects/clubing.png",
+    imgSrc: "/BelleAnge Thumb.png",
     DATE: "2024.03 ~ 2024.05",
-    ROLE: "Back-end & Front-end",
-    CONTRIBUTION: "100%", // 개인 혹은 주도적 역할일 경우
+    TEAMSIZE: "6명",
     DESCRIPTION:
       "가족의 사업 아이템을 모티브로 하여, 사용자 경험(UX)과 안정적인 데이터 처리를 목표로 개발한 쇼핑몰입니다.",
     DETAILS: [
@@ -76,10 +73,9 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "SCON",
     SUBTITLE: "Spring Framework 기반 뉴스 관리 서비스",
-    imgSrc: "/projects/clubing.png",
+    imgSrc: "/SCON Thumb.png",
     DATE: "2024.02 ~ 2024.03",
-    ROLE: "Back-end Developer",
-    CONTRIBUTION: "80%",
+    TEAMSIZE: "6명",
     DESCRIPTION:
       "과학 뉴스 콘텐츠의 효율적인 제공과 관리를 위해 설계된 Spring MVC 기반 웹 서비스입니다.",
     DETAILS: [
@@ -103,10 +99,9 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "위스키백과",
     SUBTITLE: "Servlet & JSP 기반 블로그 애플리케이션",
-    imgSrc: "/projects/clubing.png",
+    imgSrc: "/whiskey Thumb.png",
     DATE: "2024.01 ~ 2024.02",
-    ROLE: "Back-end Developer",
-    CONTRIBUTION: "100%",
+    TEAMSIZE: "5명",
     DESCRIPTION:
       "웹 서비스의 기초인 MVC 패턴과 CRUD 프로세스를 이해하기 위해 개발한 술 정보 공유 블로그입니다.",
     DETAILS: [
@@ -125,29 +120,24 @@ export const TEAM_PROJECTS: ProjectData[] = [
 export const TOY_PROJECTS: ProjectData[] = [
   {
     TITLE: "포트폴리오 사이트",
-    SUBTITLE: "React & Framer Motion 기반 개인 웹사이트",
+    SUBTITLE: "React & Tailwind CSS 기반 개인 웹사이트",
     DATE: "2025.01",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "나를 표현하는 브랜딩 페이지로, 컴포넌트 기반 설계와 Framer Motion을 활용한 부드러운 인터랙션 구현에 집중했습니다.",
     DETAILS: [
-      "Framer Motion을 활용한 탭 전환 및 리스트 업 애니메이션 구현",
-      "상태 관리 라이브러리 없이 순수 React Hook으로 테마 및 탭 로직 설계",
-      "Vite 빌드 도구를 활용하여 최적화된 초기 로딩 속도 및 배포 환경 구축",
-      "반응형 웹 디자인 적용으로 PC/태블릿/모바일 최적화 대응",
+      "Tailwind CSS의 Utility-first 방식을 활용하여 일관된 디자인 시스템 및 고품질 UI 구현",
+      "Framer Motion을 활용한 탭 전환, 리스트 업, 호버 인터랙션 등 동적 애니메이션 구현",
+      "Vite 빌드 도구를 활용하여 최적화된 초기 로딩 속도 및 효율적인 배포 환경 구축",
+      "반응형 웹 디자인(Mobile-First) 적용으로 PC/태블릿/모바일 전 기기 최적화 대응",
     ],
-    TECH: ["React", "Vite", "Framer Motion", "MUI", "TypeScript"],
-    imgSrc: "/projects/portfolio.png",
-    GIT_URL: "https://github.com/KimGiJeong1101/kgj-portfolio",
+    TECH: ["React", "Vite", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    GIT_URL: "https://github.com/KimGiJeong1101/kkj-portfolio",
     PAGE_URL: "https://kimgijeong1101.github.io/kgj-portfolio",
   },
   {
     TITLE: "제품키 관리 사이트",
     SUBTITLE: "MERN 스택 기반 라이선스 관리 도구",
     DATE: "2024.10",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "다양한 소프트웨어 제품키를 체계적으로 관리하기 위한 풀스택 프로젝트로, 안정적인 백엔드 통신에 집중했습니다.",
     DETAILS: [
@@ -157,15 +147,12 @@ export const TOY_PROJECTS: ProjectData[] = [
       "MUI 컴포넌트 커스텀을 통한 효율적인 관리자 대시보드 UI 구현",
     ],
     TECH: ["React", "Node.js", "Express", "PostgreSQL", "MUI", "Axios"],
-    imgSrc: "/projects/keymanager.png",
     GIT_URL: "https://github.com/KimGiJeong1101/KeyManager",
   },
   {
     TITLE: "학사관리 프로그램",
     SUBTITLE: "Java Swing 기반 GUI 애플리케이션",
     DATE: "2023.12",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "객체지향 프로그래밍(OOP)의 원리를 이해하고, GUI 환경에서의 데이터 CRUD 처리를 학습한 프로젝트입니다.",
     DETAILS: [
@@ -174,15 +161,12 @@ export const TOY_PROJECTS: ProjectData[] = [
       "학생 정보 및 도서 대여 시스템의 비즈니스 로직 직접 설계",
     ],
     TECH: ["Java", "Swing", "Oracle DB", "JDBC", "OOP"],
-    imgSrc: "/projects/haksa.png",
-    VIDEO_URL: "./images/Haksavideo.mp4",
+    VIDEO_URL: "/Haksavideo.mp4",
   },
   {
     TITLE: "현대자동차 데모",
     SUBTITLE: "UI/UX 퍼블리싱 및 인터랙션 모사",
     DATE: "2023.11",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "기업용 대형 웹사이트의 구조를 분석하고, 멀티미디어 콘텐츠를 배치하는 퍼블리싱 역량을 다졌습니다.",
     DETAILS: [
@@ -191,15 +175,12 @@ export const TOY_PROJECTS: ProjectData[] = [
       "jQuery를 활용한 햄버거 메뉴 및 스크롤 이벤트 구현",
     ],
     TECH: ["HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap"],
-    imgSrc: "/projects/hyundai.png",
-    PAGE_URL: "/kgj-portfolio/hyundai",
+    PAGE_URL: "/kkj-portfolio/hyundai",
   },
   {
     TITLE: "글로벌IT 데모",
     SUBTITLE: "API 연동 기반 기관 홍보 페이지",
     DATE: "2023.11",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "외부 API(지도) 연동과 라이브러리를 활용한 시각적 효과 부여에 집중한 프로젝트입니다.",
     DETAILS: [
@@ -208,15 +189,12 @@ export const TOY_PROJECTS: ProjectData[] = [
       "미디어 쿼리를 통한 기기별 최적화된 모바일 UI 제공",
     ],
     TECH: ["HTML5", "CSS3", "JavaScript", "jQuery", "Kakao Map API"],
-    imgSrc: "/projects/kdigital.png",
-    PAGE_URL: "/kgj-portfolio/company",
+    PAGE_URL: "/kkj-portfolio/company",
   },
   {
     TITLE: "SWF 홍보페이지",
     SUBTITLE: "멀티미디어 배경 중심 브랜딩 페이지",
     DATE: "2023.11",
-    ROLE: "Solo",
-    CONTRIBUTION: "100%",
     DESCRIPTION:
       "동적인 영상 배경과 CSS3 애니메이션을 결합하여 시각적인 몰입감을 극대화한 페이지입니다.",
     DETAILS: [
@@ -225,7 +203,6 @@ export const TOY_PROJECTS: ProjectData[] = [
       "직관적인 네비게이션과 서브 메뉴 트리 구조 설계",
     ],
     TECH: ["HTML5", "CSS3", "JavaScript", "Font Awesome"],
-    imgSrc: "/projects/swf.png",
-    PAGE_URL: "/kgj-portfolio/swf",
+    PAGE_URL: "/kkj-portfolio/swf",
   },
 ];

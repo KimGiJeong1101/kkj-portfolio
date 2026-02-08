@@ -16,17 +16,34 @@ const TeamProject = () => {
           className="bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all p-6 md:p-10"
         >
           <div className="flex flex-col lg:flex-row gap-10">
-            {/* 프로젝트 프리뷰 (이미지 영역) */}
-            <div className="lg:w-2/5 aspect-video bg-slate-100 rounded-2xl overflow-hidden border border-slate-100 relative group">
+            <div className="lg:w-2/5 aspect-video bg-[#f8fafc] rounded-2xl overflow-hidden border border-slate-100 relative group flex items-center justify-center">
               {project.imgSrc ? (
-                <img
-                  src={project.imgSrc}
-                  alt={project.TITLE}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src={project.imgSrc} alt={project.TITLE} className="..." />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-slate-300 font-bold">
-                  No Image
+                <div className="w-full h-full relative flex items-center justify-center bg-white">
+                  {/* 움직이는 듯한 배경 블러 노이즈 */}
+                  <div className="absolute top-[-20%] left-[-10%] w-64 h-64 bg-indigo-100 rounded-full blur-[80px] opacity-60" />
+                  <div className="absolute bottom-[-20%] right-[-10%] w-64 h-64 bg-rose-100 rounded-full blur-[80px] opacity-60" />
+
+                  <div className="relative z-10 text-center space-y-2">
+                    <span className="text-[10px] font-black text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full uppercase tracking-tighter">
+                      Project 0{index + 1}
+                    </span>
+                    <h4 className="text-2xl font-black text-slate-800 tracking-tight">
+                      {project.TITLE}
+                    </h4>
+                    <div className="w-8 h-[2px] bg-slate-200 mx-auto" />
+                  </div>
+
+                  {/* 격자 무늬 배경 데코 */}
+                  <div
+                    className="absolute inset-0 opacity-[0.1] [mask-image:linear-gradient(to_bottom,white,transparent)]"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(#64748b 1px, transparent 1px), linear-gradient(90deg, #64748b 1px, transparent 1px)",
+                      backgroundSize: "40px 40px",
+                    }}
+                  />
                 </div>
               )}
             </div>
@@ -40,7 +57,7 @@ const TeamProject = () => {
                       {project.DATE}
                     </span>
                     <span className="text-xs font-bold text-slate-400">
-                      기여도 {project.CONTRIBUTION}
+                      팀원 {project.TEAMSIZE}
                     </span>
                   </div>
                   <h3 className="text-3xl font-black text-slate-900">
@@ -48,9 +65,6 @@ const TeamProject = () => {
                   </h3>
                   <p className="text-sm font-bold text-slate-500 mt-1">
                     {project.SUBTITLE}
-                  </p>
-                  <p className="inline-block mt-2 px-2 py-0.5 bg-slate-900 text-white text-[10px] font-bold rounded">
-                    ROLE: {project.ROLE}
                   </p>
                 </div>
 

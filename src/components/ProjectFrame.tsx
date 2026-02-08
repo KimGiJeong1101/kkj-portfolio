@@ -27,7 +27,7 @@ const ProjectFrame = () => {
               <button
                 key={tab.ID}
                 onClick={() => setActiveTab(tab.ID as "toy" | "team")}
-                className={`relative px-8 py-3 text-sm font-bold transition-colors duration-300 z-10 flex items-center gap-2 ${
+                className={`relative px-8 py-3 text-sm font-bold transition-colors duration-300 z-10 flex items-center gap-2 cursor-pointer ${
                   activeTab === tab.ID
                     ? "text-indigo-600"
                     : "text-slate-500 hover:text-slate-700"

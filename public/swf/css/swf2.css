@@ -1,0 +1,140 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css2?family=Dongle&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poor+Story&display=swap);
+
+
+* {margin: 0; padding: 0;}
+a {text-decoration: none; border-radius: 20%;}
+ol,ul{list-style: none;}
+
+
+body {position: fixed; width: 100%; height: 100%;}
+
+/* 배경동영상 *********************************************************************************/
+* { box-sizing: border-box; }
+
+
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -99;
+}
+.video-foreground,.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+.video-foreground { height: 300%; top: -100%; }
+} 
+
+@media (max-aspect-ratio: 16/9) {
+
+    .video-foreground { width: 300%; left: -100%; }
+
+    }
+
+/* 로고 ****************************************************************************************/
+h1 {position: fixed; top: 40px; left: 40px; z-index:10;}
+h1 img {width: 280px;}
+header {
+    width: 700px; 
+    height: 100%; 
+    position: fixed; 
+    background: linear-gradient(-30deg, #dddddd, #aaaaaa, #ffffff); 
+    transform: skewX(-40deg); 
+    left: -380px;
+}
+
+
+/* 1depth *****************************************************************************************/
+#gnb{width: 220px; position: absolute; top: 150px; right: 0px;}
+#gnb>li{position: relative; border-radius: 20%;}
+#gnb>li>a{display: block; width: 220px; height: 50px; font: bold 18px/3 play; color: #222; box-sizing: border-box; padding-right: 40px; text-align: right;}
+#gnb>li.on>a{background-color: #fff; color: #fff;}
+#gnb>li:hover>a{background-color: #111; color: #fff;}
+#gnb em{display: inline-block; transform: skewX(40deg);}
+#gnb em i{margin-right: 20px;}
+
+
+/* 2depth *****************************************************************************************/
+#gnb ul{position: absolute; left: 0px; top: 10px; opacity: 0; transition: 1.2s;}
+#gnb>li:hover ul{opacity: 0.8; left: 210px;}
+#gnb ul a{display: block; width: 150px; height: 40px;
+        background: #222; 
+        font: bold 16px/2.5 arial; color: #fff; padding-left: 50px; 
+        margin-bottom: 3px;
+        box-sizing: border-box;
+        transition: 1.2s;
+        
+    }
+#gnb #bebe a:hover{background: #2fbdff; color: #333; transform: skewX(40deg);}
+#gnb #jam a:hover{background: #EC1F84; color: #333; transform: skewX(40deg);}
+#gnb #one a:hover{background: #ECE4EA; color: #333; transform: skewX(40deg);}
+#gnb #manne a:hover{background: #FECD4A; color: #333; transform: skewX(40deg);}
+#gnb #lady a:hover{background: #9359FC; color: #333; transform: skewX(40deg);}
+#gnb #wol a:hover{background: #EA642B; color: #333; transform: skewX(40deg);}
+#gnb #deep a:hover{background: #02C187; color: #333; transform: skewX(40deg);}
+#gnb #tsu a:hover{background: #E72E22; color: #333; transform: skewX(40deg);}
+#gnb>li.on ul{opacity: 0.8; left: 205px; top: -10px;}
+#gnb li.on ul a{background: #444; opacity: 0.7;}
+
+
+
+
+/* sns ************************************************************/
+#sns{position: fixed; top: 0px; right: 0px; background: #000; width: 100%; height: 100px; z-index: -500;}
+#sns li{margin-right: 30px; float: right;}
+#sns .fa-brands{font-size: 45px; color: #000; padding: 2px;
+                opacity: 1;
+                transform: scale(1); transition: 0.5s;
+    }
+#sns .fa-brands:hover{opacity: 1; transform: scale(1.4);}
+h2{color: goldenrod; text-align: center; font-family: 'Monoton', cursive;}
+
+/* 텍스트 박스 */
+.txtBox { width:340px; height:280px; position:fixed; top:270px; right:220px; z-index: 20000; }
+.txt { position:absolute; top:200px; right:0px; font-size:34px; font-family:Nanum Pen Script; color:#000; letter-spacing:-2px;}
+.txt b { font-family:Nanum Pen Script; color:#000; 	margin-left:20px;}
+.tit { position:absolute; top:0px; right:0px; font-size:160px; color:#000; font-family: 'Monoton', cursive; letter-spacing:-1px;}
+.tit em { font-size:50px; font-family:Poor Story; color:#2fbdff;}
+
+/* contents 레이아웃 */
+#side { width:800px; height:100%; position:fixed; bottom:0px; right:-800px; background:#222; opacity:0.5; transform:skewX(-40deg); transition:all 0.5s;}
+#side:hover { right:-500px; opacity:0.8;}
+#side .con { width:400px; height:100%; position:absolute; left:150px; bottom:0px; background:#fff; box-sizing:border-box; padding:10px; transition:all  1s;}
+#side:hover .con { left:50px;}
+
+/* contents내 썸네일 */
+#side .con p { width: 300px; height:100px; position:absolute; left:50px;}
+#side .con p em { display:inline-block; font:bold 25px/1.7 arial; color:#000000; transform:skewX(40deg); font-family:Dongle;}
+#side .con p img { width:300px; height:70px; opacity:0.6; transition:all 0.5s;}
+#side .con p img:hover { opacity:1;}
+#side .con p:nth-child(1) { bottom:270px; transform: translateX(200px); transition:all  0.4s;}
+#side .con p:nth-child(2) { bottom:160px; transform: translateX(200px); transition:all  0.8s;}
+#side .con p:nth-child(3) { bottom:50px; transform: translateX(200px); transition:all  1.2s;}
+#side:hover .con p { transform:translateX(0px);}	
+
+/* 자동롤링 버튼*/
+#side .btnContents{ width: 200px; height: 50px; position: absolute; bottom: 60px; left: -50px; color: #fff; transform: skewX(40deg);}
+#side:hover .btnContents{left: 700px;}
+/* .btnContents i{font-size: 60px; position: absolute; opacity: 1; bottom: 0px; right: 0px;}
+.btnContents i:nth-child(1) { animation:ani linear 1.5s 0s infinite;}
+.btnContents i:nth-child(2) { animation:ani linear 1.5s 0.5s infinite;}
+.btnContents i:nth-child(3) { animation:ani linear 1.5s 1.0s infinite;} */
+.btnContents p{font-size: 23px; position: absolute; opacity: 1; bottom: 0px; right: 0px;}
+.btnContents p:nth-child(1) { animation:ani linear 1.8s 0.6s infinite;}
+.btnContents p:nth-child(2) { animation:ani linear 1.8s 1.2s infinite;}
+/* .btnContents p:nth-child(3) { animation:ani linear 1.8s 1.8s infinite;} */
+
+@keyframes ani {
+    0% {right: 0px; transform: scale(1); opacity: 1;}
+    50% {right: 0px; transform: scale(1.2); opacity: 0.5;}
+    100% {right: 0px; transform: scale(1.4); opacity: 0;}
+}
