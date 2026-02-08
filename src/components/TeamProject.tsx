@@ -25,17 +25,21 @@ const TeamProject = () => {
   return (
     <div className="grid gap-8">
       {TEAM_DATA.map((project, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm flex flex-col md:flex-row gap-6"
         >
           <div className="w-full md:w-1/3 h-48 bg-slate-100 rounded-xl flex items-center justify-center">
             {/* 프로젝트 대표 이미지 자리 */}
-            <span className="text-slate-400 text-sm italic underline">Project Thumbnail</span>
+            <span className="text-slate-400 text-sm italic underline">
+              Project Thumbnail
+            </span>
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-2">
-              <h4 className="font-bold text-2xl text-slate-800">{project.TITLE}</h4>
+              <h4 className="font-bold text-2xl text-slate-800">
+                {project.TITLE}
+              </h4>
               <span className="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-xs font-bold rounded">
                 {project.ROLE}
               </span>
@@ -45,7 +49,10 @@ const TeamProject = () => {
             </p>
             <div className="flex flex-wrap gap-2">
               {project.TECH.map((tech) => (
-                <span key={tech} className="text-indigo-400 text-xs font-mono font-bold">
+                <span
+                  key={tech}
+                  className="text-indigo-400 text-xs font-mono font-bold"
+                >
                   #{tech}
                 </span>
               ))}
