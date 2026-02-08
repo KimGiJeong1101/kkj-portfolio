@@ -1,45 +1,51 @@
-interface ExperienceProps {
-  period: string;
-  title: string;
-  company: string;
-  description: string;
+// src/components/Career.tsx
+interface CareerItem {
+  PERIOD: string;
+  COMPANY: string;
+  ROLE: string;
+  DESCRIPTION: string;
 }
 
-const ExperienceItem = ({ period, title, company, description }: ExperienceProps) => (
-  <div className="relative pl-8 pb-12 last:pb-0 border-l-2 border-slate-200 ml-4">
-    {/* 타임라인 포인트 */}
-    <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-white border-4 border-blue-600" />
-    
-    <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4 mb-2">
-      <span className="text-sm font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">
-        {period}
-      </span>
-      <h3 className="text-xl font-bold text-slate-800">{title}</h3>
-    </div>
-    <p className="font-semibold text-slate-700 mb-2">{company}</p>
-    <p className="text-slate-500 leading-relaxed text-sm md:text-base whitespace-pre-line">
-      {description}
-    </p>
-  </div>
-);
+const CAREER_DATA: CareerItem[] = [
+  {
+    PERIOD: "2024 - Present",
+    COMPANY: "Awesome Tech Inc.",
+    ROLE: "Frontend Developer",
+    DESCRIPTION: "디자인 시스템 구축 및 서비스 최적화 작업 수행. React 기반의 고성능 대시보드 개발.",
+  },
+  {
+    PERIOD: "2022 - 2023",
+    COMPANY: "Startup Studio",
+    ROLE: "Web Developer",
+    DESCRIPTION: "다양한 클라이언트의 요구사항에 맞춘 반응형 웹사이트 개발 및 배포.",
+  }
+];
 
 const Career = () => {
   return (
-    <section id="career" className="py-24">
-      <h2 className="text-3xl font-bold mb-16 text-center tracking-tight">Experience</h2>
-      <div className="max-w-3xl mx-auto">
-        <ExperienceItem 
-          period="2024.01 - 2024.06"
-          title="Frontend Developer (Intern)"
-          company="(주)테크이노베이션"
-          description="• 리액트 기반 사내 관리 시스템 UI/UX 고도화 수행\n• API 연동 및 데이터 상태 관리(TanStack Query) 최적화\n• 라이트 모드/다크 모드 테마 시스템 구축"
-        />
-        <ExperienceItem 
-          period="2023.07 - 2023.12"
-          title="Web Development Bootcamp"
-          company="네이버 부스트캠프"
-          description="• 풀스택 개발 프로젝트 수행 및 팀 프로젝트 협업\n• 코드 리뷰 및 기술 블로그 운영을 통한 지식 공유"
-        />
+    <section id="career" className="py-20 border-t border-slate-100">
+      <div className="max-w-3xl mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-12 text-center text-slate-800">Experience</h2>
+        
+        <div className="space-y-12">
+          {CAREER_DATA.map((item, index) => (
+            <div key={index} className="flex flex-col md:flex-row gap-6 md:gap-12">
+              <div className="md:w-32 flex-shrink-0">
+                <span className="font-bold text-indigo-600 underline underline-offset-8 decoration-2">
+                  {item.PERIOD}
+                </span>
+              </div>
+              
+              <div className="flex-1 border-l-2 border-slate-100 pl-6 pb-2">
+                <h3 className="font-bold text-xl text-slate-800">{item.COMPANY}</h3>
+                <p className="text-indigo-500 text-sm font-medium italic mb-3">{item.ROLE}</p>
+                <p className="text-slate-600 leading-relaxed">
+                  {item.DESCRIPTION}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
