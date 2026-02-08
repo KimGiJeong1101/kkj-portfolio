@@ -1,60 +1,98 @@
-// src/components/Career.tsx
-interface CareerItem {
-  PERIOD: string;
-  COMPANY: string;
-  ROLE: string;
-  DESCRIPTION: string;
-}
-
-const CAREER_DATA: CareerItem[] = [
-  {
-    PERIOD: "2024 - Present",
-    COMPANY: "Awesome Tech Inc.",
-    ROLE: "Frontend Developer",
-    DESCRIPTION:
-      "디자인 시스템 구축 및 서비스 최적화 작업 수행. React 기반의 고성능 대시보드 개발.",
-  },
-  {
-    PERIOD: "2022 - 2023",
-    COMPANY: "Startup Studio",
-    ROLE: "Web Developer",
-    DESCRIPTION:
-      "다양한 클라이언트의 요구사항에 맞춘 반응형 웹사이트 개발 및 배포.",
-  },
-];
+import { motion } from "framer-motion";
+import { CAREER_DATA } from "../constants/career";
 
 const Career = () => {
   return (
-    <section id="career" className="py-20 border-t border-slate-100">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center text-slate-800">
-          Experience
-        </h2>
+    <section id="career" className="py-24 bg-white">
+      <div className="max-w-4xl mx-auto px-6">
+        {/* 섹션 헤더 */}
+        <div className="mb-16 text-left">
+          <h2 className="text-3xl font-black text-slate-900 tracking-tight mb-2">
+            EXPERIENCE
+          </h2>
+          <div className="w-12 h-1.5 bg-indigo-500 rounded-full" />
+        </div>
 
-        <div className="space-y-12">
+        {/* 타임라인 컨테이너 */}
+        <div className="relative border-l-2 border-slate-100 ml-4 md:ml-32 space-y-12">
           {CAREER_DATA.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex flex-col md:flex-row gap-6 md:gap-12"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="relative pl-8 md:pl-12"
             >
-              <div className="md:w-32 flex-shrink-0">
-                <span className="font-bold text-indigo-600 underline underline-offset-8 decoration-2">
+              {/* 타임라인 포인트 */}
+              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-white border-4 border-indigo-500 rounded-full z-10" />
+
+              {/* 기간 표시 */}
+              <div className="md:absolute md:-left-44 md:top-1 md:w-32 text-left md:text-right mb-2 md:mb-0">
+                <span className="text-[11px] font-black text-slate-400 tracking-tighter uppercase">
                   {item.PERIOD}
                 </span>
               </div>
 
-              <div className="flex-1 border-l-2 border-slate-100 pl-6 pb-2">
-                <h3 className="font-bold text-xl text-slate-800">
-                  {item.COMPANY}
-                </h3>
-                <p className="text-indigo-500 text-sm font-medium italic mb-3">
-                  {item.ROLE}
-                </p>
-                <p className="text-slate-600 leading-relaxed">
+              {/* 카드 본문 */}
+              <div className="group relative bg-slate-50/50 hover:bg-white p-6 md:p-8 rounded-3xl border border-transparent hover:border-slate-100 hover:shadow-xl hover:shadow-indigo-50/50 transition-all duration-300">
+                <div className="flex flex-col gap-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-black text-slate-800 group-hover:text-indigo-600 transition-colors">
+                      {item.COMPANY}
+                    </h3>
+                    {/* 구분 태그 */}
+                    <span
+                      className={`text-[9px] font-bold px-2 py-0.5 rounded ${
+                        item.TYPE === "WORK"
+                          ? "bg-emerald-50 text-emerald-600"
+                          : item.TYPE === "STUDY"
+                            ? "bg-amber-50 text-amber-600"
+                            : "bg-blue-50 text-blue-600"
+                      }`}
+                    >
+                      {item.TYPE}
+                    </span>
+                  </div>
+                  <p className="text-sm font-bold text-slate-500 mb-4">
+                    {item.ROLE}
+                  </p>
+                </div>
+
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed mb-6 break-keep">
                   {item.DESCRIPTION}
                 </p>
+
+                {/* 성과 리스트 */}
+                <ul className="grid grid-cols-1 gap-3">
+                  {item.ACHIEVEMENTS.map((achieve, i) => (
+                    <li
+                      key={i}
+                      className="text-sm text-slate-500 flex items-start gap-2.5"
+                    >
+                      <span className="text-indigo-500 font-bold mt-0.5">
+                        ·
+                      </span>
+                      <span className="leading-snug">{achieve}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* 기술 배지 */}
+                {item.TECH && (
+                  <div className="flex flex-wrap gap-2 mt-8">
+                    {item.TECH.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-white text-slate-400 text-[10px] font-bold rounded-lg border border-slate-200 uppercase"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
