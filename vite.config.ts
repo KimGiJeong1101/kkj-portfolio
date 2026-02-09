@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(), // 추가
-  ],
+  ],base: "/kkj-portfolio/",
 })
