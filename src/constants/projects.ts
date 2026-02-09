@@ -132,7 +132,7 @@ export const TOY_PROJECTS: ProjectData[] = [
     ],
     TECH: ["React", "Vite", "Tailwind CSS", "Framer Motion", "TypeScript"],
     GIT_URL: "https://github.com/KimGiJeong1101/kkj-portfolio",
-    PAGE_URL: "https://kimgijeong1101.github.io/kgj-portfolio",
+    PAGE_URL: "https://kimgijeong1101.github.io/kkj-portfolio",
   },
   {
     TITLE: "제품키 관리 사이트",
@@ -161,7 +161,7 @@ export const TOY_PROJECTS: ProjectData[] = [
       "학생 정보 및 도서 대여 시스템의 비즈니스 로직 직접 설계",
     ],
     TECH: ["Java", "Swing", "Oracle DB", "JDBC", "OOP"],
-    VIDEO_URL: "/Haksavideo.mp4",
+    VIDEO_URL: "Haksavideo.mp4",
   },
   {
     TITLE: "현대자동차 데모",
