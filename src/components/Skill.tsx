@@ -5,8 +5,8 @@ const SKILL_DATA = [
   {
     CATEGORY: "BACKEND",
     ITEMS: [
-      { name: "Java", icon: "/java.png" },
-      { name: "Spring Boot", icon: "/springboot.png" },
+      { name: "Java", icon: "java.png" },
+      { name: "Spring Boot", icon: "springboot.png" },
       { name: "Node.js", icon: "/nodeJS.png" },
       { name: "Express", icon: "/expressJS.png" },
     ],
