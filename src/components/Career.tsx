@@ -10,7 +10,7 @@ const Career = () => {
           <h2 className="text-3xl font-black text-slate-900 tracking-tight mb-2">
             EXPERIENCE
           </h2>
-          <div className="w-12 h-1.5 bg-indigo-500 rounded-full" />
+          <div className="w-12 h-1.5 bg-blue-500 rounded-full" />
         </div>
 
         {/* 타임라인 컨테이너 */}
@@ -25,7 +25,7 @@ const Career = () => {
               className="relative pl-8 md:pl-12"
             >
               {/* 타임라인 포인트 */}
-              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-white border-4 border-indigo-500 rounded-full z-10" />
+              <div className="absolute -left-[9px] top-2 w-4 h-4 bg-white border-4 border-blue-500 rounded-full z-10" />
 
               {/* 기간 표시 */}
               <div className="md:absolute md:-left-44 md:top-1 md:w-32 text-left md:text-right mb-2 md:mb-0">
@@ -35,10 +35,10 @@ const Career = () => {
               </div>
 
               {/* 카드 본문 */}
-              <div className="group relative bg-slate-50/50 hover:bg-white p-6 md:p-8 rounded-3xl border border-transparent hover:border-slate-100 hover:shadow-xl hover:shadow-indigo-50/50 transition-all duration-300">
+              <div className="group relative bg-slate-50/50 hover:bg-white p-6 md:p-8 rounded-3xl border border-transparent hover:border-slate-100 hover:shadow-xl hover:shadow-blue-50/50 transition-all duration-300">
                 <div className="flex flex-col gap-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-xl font-black text-slate-800 group-hover:text-indigo-600 transition-colors">
+                    <h3 className="text-xl font-black text-slate-800 group-hover:text-blue-600 transition-colors">
                       {item.COMPANY}
                     </h3>
                     {/* 구분 태그 */}
@@ -70,9 +70,7 @@ const Career = () => {
                       key={i}
                       className="text-sm text-slate-500 flex items-start gap-2.5"
                     >
-                      <span className="text-indigo-500 font-bold mt-0.5">
-                        ·
-                      </span>
+                      <span className="text-blue-500 font-bold mt-0.5">·</span>
                       <span className="leading-snug">{achieve}</span>
                     </li>
                   ))}

@@ -56,7 +56,7 @@ const Header = () => {
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* 로고 */}
         <div
-          className="font-extrabold text-2xl tracking-tighter uppercase text-indigo-600 cursor-pointer"
+          className="font-extrabold text-2xl tracking-tighter uppercase text-blue-600 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           KKJ's Portfolio
@@ -69,10 +69,10 @@ const Header = () => {
               key={item.NAME}
               href={item.HREF}
               onClick={(e) => scrollToSection(e, item.HREF)}
-              className="hover:text-indigo-600 transition-colors relative group"
+              className="hover:text-blue-600 transition-colors relative group"
             >
               {item.NAME}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full" />
             </a>
           ))}
         </div>
@@ -85,13 +85,13 @@ const Header = () => {
         >
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
-              className={`w-full h-0.5 bg-indigo-600 transition-all duration-300 origin-left ${isOpen ? "rotate-[42deg] translate-x-1" : ""}`}
+              className={`w-full h-0.5 bg-blue-600 transition-all duration-300 origin-left ${isOpen ? "rotate-[42deg] translate-x-1" : ""}`}
             />
             <span
-              className={`w-full h-0.5 bg-indigo-600 transition-all duration-300 ${isOpen ? "opacity-0" : ""}`}
+              className={`w-full h-0.5 bg-blue-600 transition-all duration-300 ${isOpen ? "opacity-0" : ""}`}
             />
             <span
-              className={`w-full h-0.5 bg-indigo-600 transition-all duration-300 origin-left ${isOpen ? "-rotate-[42deg] translate-x-1" : ""}`}
+              className={`w-full h-0.5 bg-blue-600 transition-all duration-300 origin-left ${isOpen ? "-rotate-[42deg] translate-x-1" : ""}`}
             />
           </div>
         </button>
@@ -101,7 +101,7 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* 메뉴 배경 (딤처리) */}
+            {/* 메뉴 배경 */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -124,7 +124,7 @@ const Header = () => {
                     key={item.NAME}
                     href={item.HREF}
                     onClick={(e) => scrollToSection(e, item.HREF)}
-                    className="text-xl font-black text-slate-800 hover:text-indigo-600 transition-colors"
+                    className="text-xl font-black text-slate-800 hover:text-blue-600 transition-colors"
                   >
                     {item.NAME}
                   </a>

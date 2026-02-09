@@ -27,7 +27,7 @@ const AboutMe = () => {
     >
       <AnimatePresence mode="wait">
         {isIntroActive ? (
-          /* --- STEP 1: 인트로 화면 (감성 멘트) --- */
+          /* --- STEP 1: 인트로 화면 --- */
           <motion.div
             key="intro"
             initial={{ opacity: 0, y: 10 }}
@@ -40,7 +40,7 @@ const AboutMe = () => {
               안녕하세요.
             </h2>
             <h1 className="text-3xl md:text-5xl font-black text-slate-900 leading-snug mb-8">
-              개발자 <span className="text-indigo-600">김기정</span>입니다.
+              개발자 <span className="text-blue-600">김기정</span>입니다.
             </h1>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed break-keep font-light">
               꾸준히 배우고 도전하며, 함께 성장하는 개발자가 되어,{" "}
@@ -52,7 +52,7 @@ const AboutMe = () => {
             </p>
           </motion.div>
         ) : (
-          /* --- STEP 2: 메인 정보 화면 (팩트 중심) --- */
+          /* --- STEP 2: 메인 정보 화면 --- */
           <motion.div
             key="profile"
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,6 @@ const AboutMe = () => {
                     }}
                   />
 
-                  {/* 사진 하단에 은은한 그라데이션을 넣어 잘림 방지 및 고급스러움 추가 */}
                   <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.05)] pointer-events-none" />
                 </div>
               </div>
@@ -82,16 +81,16 @@ const AboutMe = () => {
               {/* 오른쪽: 정보 나열 영역 */}
               <div className="md:w-3/5 p-10 flex flex-col justify-center">
                 <div className="mb-8">
-                  <h3 className="text-sm font-black tracking-[0.3em] text-indigo-500 mb-2">
+                  <h3 className="text-sm font-black tracking-[0.3em] text-blue-500 mb-2">
                     INFORMATION
                   </h3>
-                  <div className="h-1 w-12 bg-indigo-600 rounded-full" />
+                  <div className="h-1 w-12 bg-blue-600 rounded-full" />
                 </div>
 
                 <div className="grid gap-y-6">
                   {MY_INFO.map((info) => (
                     <div key={info.LABEL} className="group">
-                      <p className="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1 group-hover:text-indigo-400 transition-colors">
+                      <p className="text-[10px] font-bold text-slate-400 tracking-widest uppercase mb-1 group-hover:text-blue-400 transition-colors">
                         {info.LABEL}
                       </p>
 

@@ -29,7 +29,7 @@ const ProjectFrame = () => {
                 onClick={() => setActiveTab(tab.ID as "toy" | "team")}
                 className={`relative px-8 py-3 text-sm font-bold transition-colors duration-300 z-10 flex items-center gap-2 cursor-pointer ${
                   activeTab === tab.ID
-                    ? "text-indigo-600"
+                    ? "text-blue-600"
                     : "text-slate-500 hover:text-slate-700"
                 }`}
               >
@@ -37,7 +37,7 @@ const ProjectFrame = () => {
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full ${
                     activeTab === tab.ID
-                      ? "bg-indigo-100 text-indigo-600"
+                      ? "bg-blue-100 text-blue-600"
                       : "bg-slate-200 text-slate-500"
                   }`}
                 >
@@ -65,7 +65,7 @@ const ProjectFrame = () => {
               exit={{ opacity: 0, x: activeTab === "toy" ? 20 : -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              {/* 각 컴포넌트에 데이터를 직접 전달하거나, 해당 컴포넌트 내부에서 데이터를 임포트해서 쓰면 됩니다. */}
+              {/* 각 컴포넌트에 데이터를 직접 전달 */}
               {activeTab === "toy" ? <ToyProject /> : <TeamProject />}
             </motion.div>
           </AnimatePresence>

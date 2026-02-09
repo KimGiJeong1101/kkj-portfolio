@@ -9,17 +9,17 @@ const Footer = () => {
 
   // 이메일 주소를 클릭하면 복사되는 간단한 함수
   const copyEmail = () => {
-    navigator.clipboard.writeText("odgwmcsoqw@naver.com"); // 실제 기정님 이메일로 수정하세요!
+    navigator.clipboard.writeText("odgwmcsoqw@naver.com");
     alert("이메일 주소가 복사되었습니다.");
   };
 
   return (
     <footer className="relative bg-slate-900 text-slate-400 py-12">
-      {/* 🔝 상단 이동 버튼: 너무 튀지 않게 심플한 디자인 */}
+      {/* 상단 이동 버튼 */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <button
           onClick={scrollToTop}
-          className="bg-slate-800 hover:bg-indigo-600 text-white p-3 rounded-xl shadow-xl transition-all border border-slate-700 cursor-pointer"
+          className="bg-slate-800 hover:bg-blue-600 text-white p-3 rounded-xl shadow-xl transition-all border border-slate-700 cursor-pointer"
           aria-label="Scroll to top"
         >
           <FaArrowUp size={18} />
@@ -53,7 +53,7 @@ const Footer = () => {
               </a>
               <button
                 onClick={copyEmail}
-                className="hover:text-white transition-colors p-2 bg-slate-800 rounded-lg"
+                className="hover:text-white transition-colors p-2 bg-slate-800 rounded-lg cursor-pointer"
                 title="이메일 주소 복사"
               >
                 <FaEnvelope size={20} />
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
             <p
               onClick={copyEmail}
-              className="text-xs font-mono cursor-pointer hover:text-indigo-400"
+              className="text-xs font-mono cursor-pointer hover:text-blue-400"
             >
               odgwmcsoqw@naver.com
             </p>

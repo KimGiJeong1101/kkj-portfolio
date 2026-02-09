@@ -31,7 +31,7 @@ const ToyProject = () => {
                     {project.DATE}
                   </span>
                 </div>
-                <p className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider">
+                <p className="text-[11px] font-bold text-blue-400 uppercase tracking-wider">
                   {project.SUBTITLE}
                 </p>
               </div>
@@ -42,7 +42,7 @@ const ToyProject = () => {
                     href={project.GIT_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-slate-400 hover:text-indigo-600 transition-colors"
+                    className="text-slate-400 hover:text-blue-600 transition-colors"
                   >
                     <FaGithub size={20} />
                   </a>
@@ -52,7 +52,7 @@ const ToyProject = () => {
                     href={project.PAGE_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-slate-400 hover:text-indigo-600 transition-colors"
+                    className="text-slate-400 hover:text-blue-600 transition-colors"
                   >
                     <FaExternalLinkAlt size={18} />
                   </a>
@@ -87,9 +87,7 @@ const ToyProject = () => {
                     key={idx}
                     className="text-[12px] text-slate-500 flex items-start gap-2"
                   >
-                    <span className="text-indigo-400 mt-1 flex-shrink-0">
-                      ·
-                    </span>
+                    <span className="text-blue-400 mt-1 flex-shrink-0">·</span>
                     <span className="leading-relaxed">{detail}</span>
                   </li>
                 ))}
@@ -102,7 +100,7 @@ const ToyProject = () => {
             {project.TECH.map((tech) => (
               <span
                 key={tech}
-                className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] rounded-lg font-bold uppercase tracking-wider border border-slate-100 group-hover:bg-indigo-50 group-hover:text-indigo-500 group-hover:border-indigo-100 transition-colors"
+                className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] rounded-lg font-bold uppercase tracking-wider border border-slate-100 group-hover:bg-blue-50 group-hover:text-blue-500 group-hover:border-blue-100 transition-colors"
               >
                 {tech}
               </span>
