@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-// 기술 스택 데이터 (상징적인 아이콘 URL이나 Simple Icons 사용 권장)
+// 기술 스택 데이터
 const SKILL_DATA = [
   {
     CATEGORY: "BACKEND",
@@ -55,7 +55,7 @@ const Skill = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {SKILL_DATA.map((group) => (
             <div key={group.CATEGORY} className="flex flex-col">
-              <h3 className="text-xs font-black tracking-[0.2em] text-blue-500 mb-6 border-l-4 border-blue-600 pl-3">
+              <h3 className="text-xs font-black tracking-[0.2em] text-blue-500 mb-6 border-l-4 border-blue-600 pl-3 uppercase">
                 {group.CATEGORY}
               </h3>
 
@@ -63,19 +63,30 @@ const Skill = () => {
                 {group.ITEMS.map((skill) => (
                   <motion.div
                     key={skill.name}
+                    // PC: 위로 슥 올라감 / 모바일: 터치 시 살짝 작아짐
                     whileHover={{ y: -5 }}
+                    whileTap={{ scale: 0.95 }}
                     className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
                   >
                     {/* 아이콘 영역 */}
-                    <div className="w-10 h-10 mb-3 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-300">
+                    <div
+                      className="w-10 h-10 mb-3 flex items-center justify-center 
+                                    grayscale-0 md:grayscale group-hover:grayscale-0 
+                                    transition-all duration-300"
+                    >
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="w-full h-full object-contain opacity-60 group-hover:opacity-100"
+                        className="w-full h-full object-contain 
+                                   opacity-100 md:opacity-60 group-hover:opacity-100"
                       />
                     </div>
-                    {/* 이름 영역 (평소엔 연하게, 호버 시 진하게) */}
-                    <span className="text-[11px] font-bold text-slate-400 group-hover:text-blue-600 transition-colors uppercase tracking-wider text-center leading-tight">
+                    {/* 이름 영역 */}
+                    <span
+                      className="text-[11px] font-bold 
+                                   text-slate-600 md:text-slate-400 group-hover:text-blue-600 
+                                   transition-colors uppercase tracking-wider text-center leading-tight"
+                    >
                       {skill.name}
                     </span>
                   </motion.div>

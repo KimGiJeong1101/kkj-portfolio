@@ -96,14 +96,25 @@ const ToyProject = () => {
           </div>
 
           {/* 하단: 기술 스택 배지 */}
-          <div className="flex flex-wrap gap-2">
-            {project.TECH.map((tech) => (
-              <span
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {" "}
+            {/* mt-auto로 하단 밀착 */}
+            {project.TECH.map((tech, techIndex) => (
+              <motion.span
                 key={tech}
-                className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] rounded-lg font-bold uppercase tracking-wider border border-slate-100 group-hover:bg-blue-50 group-hover:text-blue-500 group-hover:border-blue-100 transition-colors"
+                // 배지마다 약간의 시간차를 두고 나타나게 하면 훨씬 고급스러워요
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 + techIndex * 0.05 }}
+                // 모바일 터치 대응 및 호버 효과
+                whileHover={{ scale: 1.05, backgroundColor: "#eff6ff" }} // blue-50
+                whileTap={{ scale: 0.95 }}
+                className="px-2.5 py-1 bg-slate-50 text-slate-500 text-[10px] rounded-lg font-bold uppercase tracking-wider border border-slate-100 
+                 md:group-hover:text-blue-600 md:group-hover:border-blue-200 transition-colors cursor-default"
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </div>
         </motion.div>
