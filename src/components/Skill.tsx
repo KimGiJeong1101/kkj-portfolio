@@ -7,34 +7,34 @@ const SKILL_DATA = [
     ITEMS: [
       { name: "Java", icon: "java.png" },
       { name: "Spring Boot", icon: "springboot.png" },
-      { name: "Node.js", icon: "/nodeJS.png" },
-      { name: "Express", icon: "/expressJS.png" },
+      { name: "Node.js", icon: "nodeJS.png" },
+      { name: "Express", icon: "expressJS.png" },
     ],
   },
   {
     CATEGORY: "FRONTEND",
     ITEMS: [
-      { name: "React", icon: "/React.png" },
-      { name: "JavaScript", icon: "/javascript.png" },
+      { name: "React", icon: "React.png" },
+      { name: "JavaScript", icon: "javascript.png" },
       { name: "Tailwind CSS", icon: "tailwind.png" },
-      { name: "jQuery/JSP", icon: "/jquery.png" },
+      { name: "jQuery/JSP", icon: "jquery.png" },
     ],
   },
   {
     CATEGORY: "DATABASE",
     ITEMS: [
-      { name: "MySQL", icon: "/mysql.png" },
-      { name: "Oracle", icon: "/OracleDB.png" },
-      { name: "MariaDB", icon: "/mariadb.png" },
-      { name: "MongoDB", icon: "/MongoDB.png" },
+      { name: "MySQL", icon: "mysql.png" },
+      { name: "Oracle", icon: "OracleDB.png" },
+      { name: "MariaDB", icon: "mariadb.png" },
+      { name: "MongoDB", icon: "MongoDB.png" },
     ],
   },
   {
     CATEGORY: "DEV TOOLS",
     ITEMS: [
-      { name: "Git", icon: "/git.png" },
+      { name: "Git", icon: "git.png" },
       { name: "GitHub", icon: "https://simpleicons.org/icons/github.svg" },
-      { name: "Postman", icon: "/postman.png" },
+      { name: "Postman", icon: "postman.png" },
     ],
   },
 ];

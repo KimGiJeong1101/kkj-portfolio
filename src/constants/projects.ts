@@ -18,7 +18,7 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "Clubing",
     SUBTITLE: "MERN 스택 활용 소모임 레퍼런스 웹사이트",
-    imgSrc: "/Clubing Thumb.png",
+    imgSrc: "Clubing Thumb.png",
     DATE: "2024.08 ~ 2024.09",
     TEAMSIZE: "6명",
     DESCRIPTION:
@@ -45,7 +45,7 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "BelleAnge",
     SUBTITLE: "Spring Boot & React 기반 반응형 쇼핑몰",
-    imgSrc: "/BelleAnge Thumb.png",
+    imgSrc: "BelleAnge Thumb.png",
     DATE: "2024.03 ~ 2024.05",
     TEAMSIZE: "6명",
     DESCRIPTION:
@@ -73,7 +73,7 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "SCON",
     SUBTITLE: "Spring Framework 기반 뉴스 관리 서비스",
-    imgSrc: "/SCON Thumb.png",
+    imgSrc: "SCON Thumb.png",
     DATE: "2024.02 ~ 2024.03",
     TEAMSIZE: "6명",
     DESCRIPTION:
@@ -99,7 +99,7 @@ export const TEAM_PROJECTS: ProjectData[] = [
   {
     TITLE: "위스키백과",
     SUBTITLE: "Servlet & JSP 기반 블로그 애플리케이션",
-    imgSrc: "/whiskey Thumb.png",
+    imgSrc: "whiskey Thumb.png",
     DATE: "2024.01 ~ 2024.02",
     TEAMSIZE: "5명",
     DESCRIPTION:

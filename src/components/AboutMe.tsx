@@ -65,7 +65,7 @@ const AboutMe = () => {
               <div className="md:w-2/5 bg-slate-50 flex items-center justify-center p-6 sm:p-8 border-b md:border-b-0 md:border-r border-slate-100">
                 <div className="w-full max-w-[240px] md:max-w-none aspect-[3/4] bg-slate-200 rounded-2xl shadow-inner overflow-hidden relative group">
                   <img
-                    src="/이력서사진.jpg"
+                    src="이력서사진.jpg"
                     alt="김기정"
                     className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
