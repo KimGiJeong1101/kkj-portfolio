@@ -4,38 +4,51 @@ import { TEAM_PROJECTS } from "../constants/projects";
 
 const TeamProject = () => {
   return (
-    <div className="space-y-32">
+    <div className="space-y-28">
       {TEAM_PROJECTS.map((project, index) => (
         <motion.div
           key={project.TITLE}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="border-b border-slate-200 pb-24"
+          className="
+            bg-white
+            border border-slate-200
+            rounded-3xl
+            p-10
+            transition-all duration-300
+            hover:-translate-y-2
+            hover:shadow-xl
+            hover:shadow-slate-200/60
+          "
         >
-          <div className="flex flex-col lg:flex-row gap-16">
+          <div className="flex flex-col lg:flex-row gap-14">
             {/* 이미지 */}
-            <div className="lg:w-2/5 aspect-video bg-slate-100 rounded-2xl overflow-hidden">
-              {project.imgSrc && (
-                <img
-                  src={project.imgSrc}
-                  alt={project.TITLE}
-                  className="w-full h-full object-cover"
-                />
-              )}
+            <div className="lg:w-2/5">
+              <div className="aspect-video bg-slate-100 rounded-2xl overflow-hidden shadow-sm">
+                {project.imgSrc && (
+                  <img
+                    src={project.imgSrc}
+                    alt={project.TITLE}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                )}
+              </div>
             </div>
 
             {/* 내용 */}
             <div className="lg:w-3/5 space-y-6">
               <div className="flex justify-between items-start flex-wrap gap-4">
                 <div>
-                  <p className="text-xs text-slate-400 mb-2">
+                  <p className="text-xs text-slate-400 mb-2 tracking-wide">
                     {project.DATE} · 팀원 {project.TEAMSIZE}
                   </p>
+
                   <h3 className="text-2xl md:text-3xl font-semibold text-slate-900">
                     {project.TITLE}
                   </h3>
+
                   <p className="text-sm text-slate-500 mt-2">
                     {project.SUBTITLE}
                   </p>
@@ -47,7 +60,7 @@ const TeamProject = () => {
                       href={project.GIT_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-slate-800 transition-colors"
+                      className="hover:text-slate-900 transition-colors"
                     >
                       <FaGithub size={20} />
                     </a>
@@ -57,7 +70,7 @@ const TeamProject = () => {
                       href={project.PAGE_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-slate-800 transition-colors"
+                      className="hover:text-slate-900 transition-colors"
                     >
                       <FaExternalLinkAlt size={18} />
                     </a>
@@ -67,7 +80,7 @@ const TeamProject = () => {
                       href={project.VIDEO_URL}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-slate-800 transition-colors"
+                      className="hover:text-slate-900 transition-colors"
                     >
                       <FaYoutube size={20} />
                     </a>
@@ -81,15 +94,15 @@ const TeamProject = () => {
 
               <ul className="space-y-2">
                 {project.DETAILS.map((detail, i) => (
-                  <li key={i} className="text-sm text-slate-500 flex gap-2">
-                    <span className="mt-1 text-slate-400">—</span>
+                  <li key={i} className="text-sm text-slate-500 flex gap-3">
+                    <span className="mt-1 w-1.5 h-1.5 bg-slate-400 rounded-full" />
                     {detail}
                   </li>
                 ))}
               </ul>
 
               {/* 기술 스택 */}
-              <div className="flex flex-wrap gap-2 pt-6">
+              <div className="flex flex-wrap gap-2 pt-4">
                 {project.TECH.map((tech) => (
                   <span
                     key={tech}
