@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-// 기술 스택 데이터
 const SKILL_DATA = [
   {
     CATEGORY: "BACKEND",
@@ -41,51 +40,69 @@ const SKILL_DATA = [
 
 const Skill = () => {
   return (
-    <section id="skill" className="py-20 border-t border-slate-50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 mb-4">
-            TECHNICAL SKILLS
+    <section id="skill" className="py-32">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* 타이틀 */}
+        <div className="mb-24">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-[-0.02em] text-slate-900 mb-4">
+            Skills
           </h2>
-          <p className="text-slate-500 font-medium">
-            활용 가능한 기술 스택입니다.
+          <div className="w-12 h-[2px] bg-slate-900 mb-6" />
+          <p className="text-slate-500 text-sm">
+            지금까지 프로젝트에서 사용해온 기술들입니다.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 카테고리 */}
+        <div className="space-y-24">
           {SKILL_DATA.map((group) => (
-            <div key={group.CATEGORY} className="flex flex-col">
-              <h3 className="text-xs font-black tracking-[0.2em] text-blue-500 mb-6 border-l-4 border-blue-600 pl-3 uppercase">
+            <div key={group.CATEGORY}>
+              <h3 className="text-sm font-semibold tracking-[0.15em] text-slate-400 mb-12">
                 {group.CATEGORY}
               </h3>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
                 {group.ITEMS.map((skill) => (
                   <motion.div
                     key={skill.name}
-                    // PC: 위로 슥 올라감 / 모바일: 터치 시 살짝 작아짐
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-100 transition-all group"
+                    whileHover={{ y: -6 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 220 }}
+                    className="
+                      group
+                      flex flex-col items-center justify-center
+                      bg-white
+                      border border-slate-200
+                      rounded-xl
+                      py-6 px-4
+                      transition-all duration-300
+                      hover:shadow-md
+                      hover:border-slate-300
+                    "
                   >
-                    {/* 아이콘 영역 */}
+                    {/* 아이콘 */}
                     <div
-                      className="w-10 h-10 mb-3 flex items-center justify-center 
-                                    grayscale-0 md:grayscale group-hover:grayscale-0 
-                                    transition-all duration-300"
+                      className="
+                        w-12 h-12 mb-4 flex items-center justify-center
+                        opacity-70 group-hover:opacity-100
+                        transition duration-300
+                      "
                     >
                       <img
                         src={skill.icon}
                         alt={skill.name}
-                        className="w-full h-full object-contain 
-                                   opacity-100 md:opacity-60 group-hover:opacity-100"
+                        className="w-full h-full object-contain"
                       />
                     </div>
-                    {/* 이름 영역 */}
+
+                    {/* 이름 */}
                     <span
-                      className="text-[11px] font-bold 
-                                   text-slate-600 md:text-slate-400 group-hover:text-blue-600 
-                                   transition-colors uppercase tracking-wider text-center leading-tight"
+                      className="
+                        text-xs font-medium tracking-wide
+                        text-slate-600
+                        group-hover:text-slate-900
+                        transition-colors duration-300
+                      "
                     >
                       {skill.name}
                     </span>
